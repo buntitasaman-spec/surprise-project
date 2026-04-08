@@ -2,45 +2,70 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>For My Love ❤️</title>
+<title>For My bibi ❤️</title>
 
 <style>
 body {
   margin: 0;
-  font-family: Arial;
-  background: linear-gradient(to top, #ffd6e7, #fff);
-  text-align: center;
-  overflow: hidden;
-}
-
-/* หน้าใส่รหัส */
-#lockScreen {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: #ffb6c1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #ffe4ec, #ffffff);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-input {
-  padding: 10px;
-  font-size: 18px;
-  border-radius: 10px;
-  border: none;
+/* กล่องกลาง */
+#lockScreen {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   text-align: center;
+  width: 300px;
 }
 
+/* ช่องกรอกรหัส */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #ff6699;
+  box-shadow: 0 0 0 3px rgba(255, 102, 153, 0.2);
+}
+
+/* ปุ่ม */
 button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 18px;
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 16px;
   border: none;
-  border-radius: 10px;
-  background: #ff3366;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff4d88, #ff6699);
   color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* hover effect */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 77, 136, 0.3);
+}
+
+/* กดแล้ว */
+button:active {
+  transform: scale(0.98);
 }
 
 /* หน้าเซอร์ไพรส์ */
