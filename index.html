@@ -13,11 +13,16 @@
 body {
   margin: 0;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #eafaf1; /* พื้นหลังเขียวอ่อน */
   font-family: 'Prompt', sans-serif;
+  background: linear-gradient(270deg, #eafaf1, #ffe4ec, #eafaf1);
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 /* กล่องกลาง */
 #lockScreen {
@@ -160,7 +165,7 @@ button:active {
   </div>
 
   <div id="message" style="display:none;">
-    ❤️ รักเธอมากนะ อยู่ด้วยกันไปนานๆ เลยนะ ❤️
+    ❤️ คิดถึงอะ จุ๊บตูดทีจิ ❤️
   </div>
 </div>
 
