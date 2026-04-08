@@ -13,16 +13,37 @@
 body {
   margin: 0;
   height: 100vh;
+ display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Prompt', sans-serif;
-  background: linear-gradient(270deg, #eafaf1, #ffe4ec, #eafaf1);
-  background-size: 600% 600%;
-  animation: gradientMove 10s ease infinite;
+  background: radial-gradient(circle at top, #ffffff, #eafaf1);
+  overflow: hidden;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* วงแสงลอย */
+body::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #ff99cc;
+  filter: blur(120px);
+  top: -100px;
+  left: -100px;
+  opacity: 0.4;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #99ffcc;
+  filter: blur(120px);
+  bottom: -100px;
+  right: -100px;
+  opacity: 0.4;
 }
 /* กล่องกลาง */
 #lockScreen {
