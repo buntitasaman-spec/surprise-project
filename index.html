@@ -128,6 +128,17 @@ button:active {
 .gift-box.open .lid {
   transform: translateY(-60px) rotate(-15deg);
 }
+ #main {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+  #lockScreen, #main {
+  transition: all 0.5s ease;
+}
 </style>
 </head>
 
@@ -144,12 +155,14 @@ button:active {
 <!-- 💖 หน้าเซอร์ไพรส์ -->
 <div id="main">
   <h1> Click Click </h1>
-  <div class="gift-box" onclick="startSurprise()">
-  <div class="lid"></div>
-  <div class="box"></div>
-  <div class="ribbon-vertical"></div>
-  <div class="ribbon-horizontal"></div>
-  <div id="message">
+ <div class="gift-box" onclick="startSurprise()">
+    <div class="lid"></div>
+    <div class="box"></div>
+    <div class="ribbon-vertical"></div>
+    <div class="ribbon-horizontal"></div>
+  </div>
+
+  <div id="message" style="display:none;">
     ❤️ รักเธอมากนะ อยู่ด้วยกันไปนานๆ เลยนะ ❤️
   </div>
 </div>
@@ -162,9 +175,11 @@ function checkPass() {
   let input = document.getElementById("pass").value;
   if (input === PASSWORD) {
     document.getElementById("lockScreen").style.display = "none";
-    document.getElementById("main").style.display = "block";
+    
+    let main = document.getElementById("main");
+    main.style.display = "flex"; // 👈 ใช้ flex เพื่อจัดกลาง
   } else {
-    document.getElementById("error").innerText = " ม่ะ ม่ะ ม่ะ ม่ะ ช่ะะะะะ ";
+    document.getElementById("error").innerText = "ม่ะ ม่ะ ม่ะ ม่ะ ช่ะะะะะ 😜";
   }
 }
 
