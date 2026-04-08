@@ -114,6 +114,63 @@ button:active {
   0% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(-100vh); opacity: 0; }
 }
+  .gift-box {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 100px auto;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gift-box:hover {
+  transform: scale(1.1);
+}
+
+/* ตัวกล่อง */
+.box {
+  width: 100%;
+  height: 100%;
+  background: #ffc0cb;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+}
+
+/* ฝา */
+.lid {
+  width: 100%;
+  height: 40px;
+  background: #ffb6c1;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: -20px;
+  transition: transform 0.5s;
+}
+
+/* ริบบิ้นแนวตั้ง */
+.ribbon-vertical {
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background: #ff6699;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ริบบิ้นแนวนอน */
+.ribbon-horizontal {
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  background: #ff6699;
+  top: 40px;
+}
+
+/* ตอนเปิดกล่อง */
+.gift-box.open .lid {
+  transform: translateY(-60px) rotate(-15deg);
+}
 </style>
 </head>
 
@@ -130,7 +187,11 @@ button:active {
 <!-- 💖 หน้าเซอร์ไพรส์ -->
 <div id="main">
   <h1> Click Click </h1>
-  <div id="gift" onclick="startSurprise()">🎁</div>
+  <div class="gift-box" onclick="startSurprise()">
+  <div class="lid"></div>
+  <div class="box"></div>
+  <div class="ribbon-vertical"></div>
+  <div class="ribbon-horizontal"></div>
   <div id="message">
     ❤️ รักเธอมากนะ อยู่ด้วยกันไปนานๆ เลยนะ ❤️
   </div>
@@ -151,6 +212,7 @@ function checkPass() {
 }
 
 function startSurprise() {
+  document.querySelector(".gift-box").classList.add("open");
   document.getElementById("message").style.display = "block";
 
   setInterval(() => {
