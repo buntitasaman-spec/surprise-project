@@ -166,6 +166,16 @@ button:active {
   align-items: center;
   flex-direction: column;
 }
+ .card {
+  background: rgba(255,255,255,0.85);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+}
+  
 </style>
 </head>
 
@@ -187,6 +197,11 @@ button:active {
     <div class="box"></div>
     <div class="ribbon-vertical"></div>
     <div class="ribbon-horizontal"></div>
+   <div class="card">
+    <h2>Our anniversary</h2>
+    <input type="password" id="pass" placeholder="4 PIN">
+    <button onclick="checkPass()">Are you 100% sure ?!</button>
+    <p id="error" style="color:red;"></p>
   </div>
 
   <div id="message" style="display:none;">
