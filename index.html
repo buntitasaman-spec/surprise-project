@@ -1,183 +1,91 @@
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
 <title>For My bibi ❤️</title>
 
-<!-- ✅ เปลี่ยนเป็น Prompt -->
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-  font-family: 'Prompt', sans-serif;
-}
+* { font-family: 'Prompt', sans-serif; }
 
 body {
   margin: 0;
   height: 100vh;
- display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Prompt', sans-serif;
-  background: radial-gradient(circle at top, #ffffff, #eafaf1);
-  overflow: hidden;
-}
-
-/* วงแสงลอย */
-body::before {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: #ff99cc;
-  filter: blur(120px);
-  top: -100px;
-  left: -100px;
-  opacity: 0.4;
-}
-
-body::after {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: #99ffcc;
-  filter: blur(120px);
-  bottom: -100px;
-  right: -100px;
-  opacity: 0.4;
-}
-/* กล่องกลาง */
-#lockScreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: transparent; */
-  background: #ffb6c1;
+  background: radial-gradient(circle at top, #ffffff, #eafaf1);
 }
 
-/* ช่องกรอกรหัส */
-input {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  font-size: 16px;
-  border-radius: 12px;
-  border: 1px solid #eee;
-  outline: none;
-  transition: 0.3s;
-}
-
-input:focus {
-  border-color: #ff6699;
-  box-shadow: 0 0 0 3px rgba(255, 102, 153, 0.2);
-}
-
-/* ปุ่ม */
-button {
-  width: 100%;
-  margin-top: 15px;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ff4d88, #ff6699);
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-/* hover effect */
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 77, 136, 0.3);
-}
-
-/* กดแล้ว */
-button:active {
-  transform: scale(0.98);
-}
-
- .gift-box {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  margin: 100px auto;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.gift-box:hover {
-  transform: scale(1.1);
-}
-
-/* ตัวกล่อง */
- .box {
-  width: 100%;
-  height: 100%;
-  background: #ffc0cb;
-  border-radius: 10px;
-  position: absolute;
-  bottom: 0;
-}
-
-/* ฝา */
- .lid {
-  width: 100%;
-  height: 40px;
-  background: #ffb6c1;
-  border-radius: 10px 10px 0 0;
-  position: absolute;
-  top: -20px;
-  transition: transform 0.5s;
-}
-
-/* ริบบิ้นแนวตั้ง */
-.ribbon-vertical {
-  position: absolute;
-  width: 20px;
-  height: 100%;
-  background: #ff6699;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* ริบบิ้นแนวนอน */
-.ribbon-horizontal {
-  position: absolute;
-  height: 20px;
-  width: 100%;
-  background: #ff6699;
-  top: 40px;
-}
-
-/* ตอนเปิดกล่อง */
-.gift-box.open .lid {
-  transform: translateY(-60px) rotate(-15deg);
-} 
- #main {
-  display: none;
+/* หน้าแรก */
+#lockScreen {
+  position: fixed;
   width: 100%;
   height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  background: #ffb6c1;
 }
- .card {
-  background: rgba(255,255,255,0.85);
+
+/* กล่อง */
+.card {
+  background: rgba(255,255,255,0.9);
   padding: 40px;
   border-radius: 20px;
   text-align: center;
-  width: 300px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  backdrop-filter: blur(10px);
-   
 }
-  
+
+/* input + button */
+input, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  background: #ff4d88;
+  color: white;
+}
+
+/* หน้า 2 */
+#main {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* กล่องของขวัญ */
+.gift-box {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  background: pink;
+  border-radius: 10px;
+}
+
+.lid {
+  width: 100%;
+  height: 30px;
+  background: hotpink;
+  position: absolute;
+  top: -20px;
+  transition: 0.5s;
+}
+
+.gift-box.open .lid {
+  transform: translateY(-50px) rotate(-20deg);
+}
 </style>
 </head>
 
