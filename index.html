@@ -1,13 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="th">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <title>For My bibi ❤️</title>
 
 <style>
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Prompt', sans-serif;
   background: linear-gradient(135deg, #cffcd3, #67A88D);
   display: flex;
   justify-content: center;
@@ -105,15 +107,15 @@ button:active {
 
 <!-- 🔒 หน้าใส่รหัส -->
 <div id="lockScreen">
-  <h2>ใส่รหัสก่อนนะ 😊</h2>
+  <h2>Our anniversary</h2>
   <input type="password" id="pass" placeholder="รหัสคืออะไรน้าา">
-  <button onclick="checkPass()">เข้าเลย ❤️</button>
+  <button onclick="checkPass()"> click here ! ! ❤️</button>
   <p id="error" style="color:red;"></p>
 </div>
 
 <!-- 💖 หน้าเซอร์ไพรส์ -->
 <div id="main">
-  <h1>มีอะไรจะให้เธอ 💕</h1>
+  <h1> มีอะไรจะบอก </h1>
   <div id="gift" onclick="startSurprise()">🎁</div>
   <div id="message">
     ❤️ รักเธอมากนะ อยู่ด้วยกันไปนานๆ เลยนะ ❤️
@@ -126,7 +128,7 @@ button:active {
 
 <script>
 // 🔑 เปลี่ยนรหัสตรงนี้
-const PASSWORD = "1234";
+const PASSWORD = "3011";
 
 function checkPass() {
   let input = document.getElementById("pass").value;
@@ -134,24 +136,10 @@ function checkPass() {
     document.getElementById("lockScreen").style.display = "none";
     document.getElementById("main").style.display = "block";
   } else {
-    document.getElementById("error").innerText = "รหัสไม่ถูกนะ 😜";
+    document.getElementById("error").innerText = " 4 PIN ";
   }
 }
 
-function startSurprise() {
-  document.getElementById("message").style.display = "block";
-  document.getElementById("music").play();
-
-  setInterval(() => {
-    let heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    document.body.appendChild(heart);
-
-    setTimeout(() => heart.remove(), 5000);
-  }, 300);
-}
 </script>
 
 </body>
