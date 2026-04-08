@@ -12,159 +12,74 @@
 
 body {
   margin: 0;
-  background: linear-gradient(135deg, #cffcd3, #67A88D);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background: #eafaf1; /* พื้นหลังเขียวอ่อน */
+  font-family: 'Prompt', sans-serif;
 }
 
-/* กล่องกลาง */
-#lockScreen {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(15px);
-  padding: 40px;
-  border-radius: 24px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-  text-align: center;
-  width: 320px;
-  animation: fadeIn 0.8s ease;
-}
-
-/* animation นุ่ม ๆ */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-/* ช่องกรอกรหัส */
-input {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  font-size: 16px;
-  border-radius: 12px;
-  border: 1px solid #eee;
-  outline: none;
+/* การ์ด */
+.card {
+  width: 220px;
+  height: 360px;
+  background: #f6fffa;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   transition: 0.3s;
 }
 
-input:focus {
-  border-color: #ff6699;
-  box-shadow: 0 0 0 3px rgba(255, 102, 153, 0.2);
+.card:hover {
+  transform: translateY(-5px);
 }
 
-/* ปุ่ม */
-button {
-  width: 100%;
-  margin-top: 15px;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ff4d88, #ff6699);
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 77, 136, 0.3);
-}
-
-button:active {
-  transform: scale(0.98);
-}
-
-/* หน้าเซอร์ไพรส์ */
-#main {
-  display: none;
-  text-align: center;
-}
-
-#gift {
-  font-size: 80px;
-  margin-top: 100px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#gift:hover {
-  transform: scale(1.1);
-}
-
-#message {
-  display: none;
-  font-size: 26px;
-  color: #ff3366;
-  margin-top: 20px;
-  animation: fadeIn 1s ease;
-}
-
-/* หัวใจลอย */
-.heart {
-  position: fixed;
-  color: red;
-  font-size: 20px;
-  animation: float 5s linear infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-100vh); opacity: 0; }
-}
-  .gift-box {
-  position: relative;
+/* ซองจดหมาย */
+.envelope {
   width: 120px;
-  height: 120px;
-  margin: 100px auto;
-  cursor: pointer;
-  transition: transform 0.3s;
+  height: 80px;
+  background: #a8e6cf;
+  position: relative;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.gift-box:hover {
-  transform: scale(1.1);
-}
-
-/* ตัวกล่อง */
-.box {
-  width: 100%;
-  height: 100%;
-  background: #ffc0cb;
-  border-radius: 10px;
+/* ฝาซอง */
+.envelope::before {
+  content: "";
   position: absolute;
-  bottom: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 40px solid #81d4b3;
 }
 
-/* ฝา */
-.lid {
-  width: 100%;
-  height: 40px;
-  background: #ffb6c1;
-  border-radius: 10px 10px 0 0;
+/* จดหมาย */
+.letter {
   position: absolute;
   top: -20px;
-  transition: transform 0.5s;
+  font-size: 24px;
+  transition: 0.4s;
 }
 
-/* ริบบิ้นแนวตั้ง */
-.ribbon-vertical {
-  position: absolute;
-  width: 20px;
-  height: 100%;
-  background: #ff6699;
-  left: 50%;
-  transform: translateX(-50%);
+/* hover แล้วจดหมายโผล่ */
+.card:hover .letter {
+  transform: translateY(-10px);
 }
 
-/* ริบบิ้นแนวนอน */
-.ribbon-horizontal {
-  position: absolute;
-  height: 20px;
-  width: 100%;
-  background: #ff6699;
-  top: 40px;
+/* ข้อความ */
+.text {
+  margin-top: 20px;
+  color: #4caf7d;
+  font-size: 16px;
 }
 
 /* ตอนเปิดกล่อง */
@@ -207,7 +122,7 @@ function checkPass() {
     document.getElementById("lockScreen").style.display = "none";
     document.getElementById("main").style.display = "block";
   } else {
-    document.getElementById("error").innerText = "รหัสไม่ถูกนะ 😜";
+    document.getElementById("error").innerText = " ม่ะ ม่ะ ม่ะ ม่ะ ช่ะะะะะ ";
   }
 }
 
